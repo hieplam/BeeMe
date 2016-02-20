@@ -22,5 +22,9 @@ namespace SeeMe.Controllers
 
             return View();
         }
+        public string Get()
+        {
+            return "YOLO";
+        }
     }
 }
