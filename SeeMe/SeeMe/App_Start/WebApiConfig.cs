@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Cors;
 using SeeMe.Utilitiis;
 
 namespace SeeMe
@@ -22,6 +23,10 @@ namespace SeeMe
             //    "_api/{controller}/{fileName}", //Urls
             //    defaults: new { fileName = RouteParameter.Optional}); //Defaults option
             //new { fileName = @"\w+" }); //Constraints
+
+            //CORS config
+            var corsAttributes = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(corsAttributes);
         }
     }
 }
