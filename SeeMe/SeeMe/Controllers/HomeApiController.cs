@@ -32,12 +32,12 @@ namespace SeeMe.Controllers
             }
 
             var filePath = HostingEnvironment.MapPath($"~/sourcehinh/{fileName}");
-            if (!Directory.Exists(filePath))
+            if (!File.Exists(filePath))
             {
                 throw new FileNotFoundException();
             }
 
-            using (var fileStream = new FileStream(fileName, FileMode.Open))
+            using (var fileStream = new FileStream(filePath, FileMode.Open))
             {
                 var image = Image.FromStream(fileStream);
                 var memoryStream = new MemoryStream();

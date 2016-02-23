@@ -14,9 +14,9 @@ namespace SeeMe
 
             config.Routes.MapHttpRoute("HomeApi",
                 "_api/{controller}/{fileName}",
-                defaults: new { fileName = RouteParameter.Optional},
-                //constraints: new {fileName = new CustomExpressionConstraint(@"/\.(gif|jpg|jpeg|tiff|png)$/i")});
-                constraints: new { fileName = new CustomExpressionConstraint(@"[A-Za-z]{2}") });
+                defaults: new {fileName = RouteParameter.Optional});
+            //constraints: new {fileName = new CustomExpressionConstraint(@"/\.(gif|jpg|jpeg|tiff|png)$/i")});
+            //constraints: new { fileName = new CustomExpressionConstraint(@"[A-Za-z]{2}") });
 
             //config.Routes.MapHttpRoute("DefaultApi1", //Route name
             //    "_api/{controller}/{fileName}", //Urls
