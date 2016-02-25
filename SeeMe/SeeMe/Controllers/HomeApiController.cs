@@ -23,34 +23,50 @@ namespace SeeMe.Controllers
 
             return Directory.GetFiles(sourcePath);
         }
-        
+
         public HttpResponseMessage Get(string fileName)
         {
-            if (string.IsNullOrEmpty(fileName))
-            {
-                throw new InvalidDataException();
-            }
-
             var filePath = HostingEnvironment.MapPath($"~/sourcehinh/{fileName}");
-            if (!File.Exists(filePath))
+            if (filePath == null)
             {
-                throw new FileNotFoundException();
+                return new HttpResponseMessage(HttpStatusCode.NotFound);
             }
+            var fileStream =  File.Open(filePath,FileMode.Open, FileAccess.Read);
+            var response = new HttpResponseMessage {Content = new StreamContent(fileStream)};
 
-            using (var fileStream = new FileStream(filePath, FileMode.Open))
-            {
-                var image = Image.FromStream(fileStream);
-                var memoryStream = new MemoryStream();
-                image.Save(memoryStream, ImageFormat.Jpeg);
+            response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment") { FileName = fileName };
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+            response.Content.Headers.ContentLength = new FileInfo(filePath).Length;
 
-                var result = new HttpResponseMessage(HttpStatusCode.OK)
-                {
-                    Content = new ByteArrayContent(memoryStream.ToArray())
-                };
-                result.Content.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
-
-                return result;
-            }
+            return response;
         }
+        //public HttpResponseMessage Get(string fileName)
+        //{
+        //    if (string.IsNullOrEmpty(fileName))
+        //    {
+        //        throw new HttpResponseException(HttpStatusCode.NotFound);
+        //    }
+
+        //    var filePath = HostingEnvironment.MapPath($"~/sourcehinh/{fileName}");
+        //    if (!File.Exists(filePath))
+        //    {
+        //        throw new HttpResponseException(HttpStatusCode.NotFound);
+        //    }
+
+        //    using (var fileStream = new FileStream(filePath, FileMode.Open))
+        //    {
+        //        var image = Image.FromStream(fileStream);
+        //        var memoryStream = new MemoryStream();
+        //        image.Save(memoryStream, ImageFormat.Jpeg);
+
+        //        var result = new HttpResponseMessage(HttpStatusCode.OK)
+        //        {
+        //            Content = new ByteArrayContent(memoryStream.ToArray())
+        //        };
+        //        result.Content.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
+
+        //        return result;
+        //    }
+        //}
     }
 }
