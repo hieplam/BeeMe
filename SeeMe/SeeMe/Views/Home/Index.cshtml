@@ -10,62 +10,62 @@
     <div class="col-lg-12" id="image-wrapper">
         <div class="col-lg-3 col-md-4 col-xs-6 thumb">
             <a class="thumbnail" href="#">
-                <img class="img-responsive" id="testing" src="contents/images/text.png" alt="">
+                <img class="img-responsive" id="testing" src="Content/images/text.png" alt="">
             </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6 thumb">
             <a class="thumbnail" href="#">
-                <img class="img-responsive" src="contents/images/text.png" alt="">
+                <img class="img-responsive" src="Content/Images/text.png" alt="">
             </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6 thumb">
             <a class="thumbnail" href="#">
-                <img class="img-responsive" src="contents/images/text.png" alt="">
+                <img class="img-responsive" src="Content/images/text.png" alt="">
             </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6 thumb">
             <a class="thumbnail" href="#">
-                <img class="img-responsive" src="contents/images/text.png" alt="">
+                <img class="img-responsive" src="Content/images/text.png" alt="">
             </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6 thumb">
             <a class="thumbnail" href="#">
-                <img class="img-responsive" src="contents/images/text.png" alt="">
+                <img class="img-responsive" src="Content/images/text.png" alt="">
             </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6 thumb">
             <a class="thumbnail" href="#">
-                <img class="img-responsive" src="contents/images/text.png" alt="">
+                <img class="img-responsive" src="Content/images/text.png" alt="">
             </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6 thumb">
             <a class="thumbnail" href="#">
-                <img class="img-responsive" src="contents/images/text.png" alt="">
+                <img class="img-responsive" src="Content/images/text.png" alt="">
             </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6 thumb">
             <a class="thumbnail" href="#">
-                <img class="img-responsive" src="contents/images/text.png" alt="">
+                <img class="img-responsive" src="Content/images/text.png" alt="">
             </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6 thumb">
             <a class="thumbnail" href="#">
-                <img class="img-responsive" src="contents/images/text.png" alt="">
+                <img class="img-responsive" src="Content/images/text.png" alt="">
             </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6 thumb">
             <a class="thumbnail" href="#">
-                <img class="img-responsive" src="contents/images/text.png" alt="">
+                <img class="img-responsive" src="Content/images/text.png" alt="">
             </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6 thumb">
             <a class="thumbnail" href="#">
-                <img class="img-responsive" src="contents/images/text.png" alt="">
+                <img class="img-responsive" src="Content/images/text.png" alt="">
             </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6 thumb">
             <a class="thumbnail" href="#">
-                <img class="img-responsive" src="contents/images/text.png" alt="">
+                <img class="img-responsive" src="Content/images/text.png" alt="">
             </a>
         </div>
     </div>
@@ -74,16 +74,23 @@
 <script type="text/javascript">
     $(document).ready(function () {
         var imagesUrl;
-        $.get('http://localhost:5800/_api/homeapi', function (data) {
+        var controllerUrl = 'http://localhost:5800/_api/homeapi/';
+
+        $.get(controllerUrl, function (data) {
             imagesUrl = data;
-        }).done(function() {
-            if (imagesUrl) {
-                console.log(imagesUrl);
+        }).done(function () {
+            if (imagesUrl.length !== 0) {
+                $('#image-wrapper div a img').each(function (index) {
+                    $(this).attr('src', controllerUrl + imagesUrl[index]);
+                });               
+                
             }
         });
 
-        $('#image-wrapper div a img').each(function () {
-            $(this).attr('src', 'http://localhost:5800/_api/homeapi/1.jpg');
-        });
+        //$('#image-wrapper div a img').each(function () {
+        //    $(this).attr('src', 'http://localhost:5800/_api/homeapi/1.jpg');
+        //});
+
+        
     });
 </script>
