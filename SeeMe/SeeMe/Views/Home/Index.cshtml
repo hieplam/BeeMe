@@ -7,67 +7,10 @@
     <div class="col-lg-12">
         <h1 class="page-header">{{ message }}</h1>
     </div>
+</div>
+<div class="row">
     <div class="col-lg-12" id="image-wrapper">
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" id="testing" src="Content/images/text.png" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="Content/Images/text.png" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="Content/images/text.png" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="Content/images/text.png" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="Content/images/text.png" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="Content/images/text.png" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="Content/images/text.png" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="Content/images/text.png" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="Content/images/text.png" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="Content/images/text.png" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="Content/images/text.png" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="Content/images/text.png" alt="">
-            </a>
-        </div>
+        
     </div>
 </div>
 
@@ -80,10 +23,17 @@
             imagesUrl = data;
         }).done(function () {
             if (imagesUrl.length !== 0) {
-                $('#image-wrapper div a img').each(function (index) {
-                    $(this).attr('src', controllerUrl + imagesUrl[index]);
-                });               
-                
+                //$('#image-wrapper div a img').each(function (index) {
+                //    $(this).attr('src', controllerUrl + imagesUrl[index]);
+                //});
+                var imagesHtml = '';
+
+                for (var i = 0; i < imagesUrl.length; i++) {
+                    var fileName = imagesUrl[i];
+                    imagesHtml = imagesHtml.concat(generateImage(controllerUrl + fileName));
+                }
+
+                $('#image-wrapper').html(imagesHtml);
             }
         });
 
@@ -93,4 +43,10 @@
 
         
     });
+
+    function generateImage(url) {
+        var imageStructure = '<div class="col-md-4 col-xs-6 thumb"><a class="thumbnail" href="#"><img class="img-responsive" id="testing" src="{0}" alt=""></a></div>';
+
+        return imageStructure.replace('{0}', url);
+    };
 </script>

@@ -60,6 +60,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SeeMe\SeeMe.csproj">
+      <Project>{7030c3bc-d9e2-48fe-9d78-b50d4f658def}</Project>
+      <Name>SeeMe</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

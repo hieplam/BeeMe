@@ -140,10 +140,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageDetailController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilitiis\AlgorithmExtension.cs" />
     <Compile Include="Utilitiis\CustomExpressionConstraint.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +184,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Views\ImageDetail\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

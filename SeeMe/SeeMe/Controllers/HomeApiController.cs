@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web.Hosting;
 using System.Web.Http;
+using SeeMe.Utilitiis;
 
 namespace SeeMe.Controllers
 {
@@ -22,25 +23,26 @@ namespace SeeMe.Controllers
                 Directory.CreateDirectory(sourcePath);
             }
 
-            return Directory.GetFiles(sourcePath).Select(Path.GetFileName);
+            return Directory.GetFiles(sourcePath).Select(Path.GetFileName).ToList().Shuffle();
         }
 
-        //public HttpResponseMessage Get(string fileName)
-        //{
-        //    var filePath = HostingEnvironment.MapPath($"~/sourcehinh/{fileName}");
-        //    if (filePath == null)
-        //    {
-        //        return new HttpResponseMessage(HttpStatusCode.NotFound);
-        //    }
-        //    var fileStream =  File.Open(filePath,FileMode.Open, FileAccess.Read);
-        //    var response = new HttpResponseMessage {Content = new StreamContent(fileStream)};
+        public HttpResponseMessage GetAndDownload(string file)
+        {
+            var filePath = HostingEnvironment.MapPath($"~/sourcehinh/{file}");
+            if (filePath == null)
+            {
+                return new HttpResponseMessage(HttpStatusCode.NotFound);
+            }
+            var fileStream = File.Open(filePath, FileMode.Open, FileAccess.Read);
+            var response = new HttpResponseMessage { Content = new StreamContent(fileStream) };
 
-        //    response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment") { FileName = fileName };
-        //    response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-        //    response.Content.Headers.ContentLength = new FileInfo(filePath).Length;
+            response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment") { FileName = file };
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+            response.Content.Headers.ContentLength = new FileInfo(filePath).Length;
 
-        //    return response;
-        //}
+            return response;
+        }
+
         public HttpResponseMessage Get(string fileName)
         {
             if (string.IsNullOrEmpty(fileName))
