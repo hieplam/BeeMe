@@ -3,25 +3,25 @@ using System.Collections.Generic;
 
 namespace SeeMe.Utilitiis
 {
-    public static class AlgorithmExtension
+    public static class ListExtension
     {
         private static readonly Random Random = new Random();
 
         public static IList<T> Shuffle<T>(this IList<T> list)
         {
-            var n = list.Count;
-            while (n > 1)
+            var count = list.Count;
+            while (count > 1)
             {
-                n--;
-                var k = Random.Next(n + 1);
+                count--;
+                var randomIndex = Random.Next(count + 1);
 
-                list.Swap(k,n);
+                list.SwapIndex(randomIndex, count);
             }
 
             return list;
         }
 
-        public static void Swap<T>(this IList<T> list, int firstIndex, int secondIndex)
+        public static void SwapIndex<T>(this IList<T> list, int firstIndex, int secondIndex)
         {
             var temp = list[firstIndex];
             list[firstIndex] = list[secondIndex];
