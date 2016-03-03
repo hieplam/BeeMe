@@ -25,23 +25,27 @@ namespace SeeMe.Controllers
 
             return Directory.GetFiles(sourcePath).Select(Path.GetFileName).ToList().Shuffle();
         }
+        /// <summary>
+        /// This method used for download image, browser will open a popup to save image. Comment for later use
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        //public HttpResponseMessage Get(string fileName)
+        //{
+        //    var filePath = HostingEnvironment.MapPath($"~/sourcehinh/{fileName}");
+        //    if (filePath == null)
+        //    {
+        //        return new HttpResponseMessage(HttpStatusCode.NotFound);
+        //    }
+        //    var fileStream = File.Open(filePath, FileMode.Open, FileAccess.Read);
+        //    var response = new HttpResponseMessage { Content = new StreamContent(fileStream) };
 
-        public HttpResponseMessage GetAndDownload(string file)
-        {
-            var filePath = HostingEnvironment.MapPath($"~/sourcehinh/{file}");
-            if (filePath == null)
-            {
-                return new HttpResponseMessage(HttpStatusCode.NotFound);
-            }
-            var fileStream = File.Open(filePath, FileMode.Open, FileAccess.Read);
-            var response = new HttpResponseMessage { Content = new StreamContent(fileStream) };
+        //    response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment") { FileName = fileName };
+        //    response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+        //    response.Content.Headers.ContentLength = new FileInfo(filePath).Length;
 
-            response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment") { FileName = file };
-            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-            response.Content.Headers.ContentLength = new FileInfo(filePath).Length;
-
-            return response;
-        }
+        //    return response;
+        //}
 
         public HttpResponseMessage Get(string fileName)
         {

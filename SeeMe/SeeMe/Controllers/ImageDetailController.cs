@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using SeeMe.Models;
 
 namespace SeeMe.Controllers
 {
@@ -6,7 +7,14 @@ namespace SeeMe.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var model = new ImageDetailModel
+            {
+                ArtistName ="Lam TaHy",
+                ImageDescription = "This is the first Tahy picture",
+                ImageName = "My Image"
+            };
+
+            return View(model);
         }
     }
 }

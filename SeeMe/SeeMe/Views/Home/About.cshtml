@@ -1,7 +1,446 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<div class="col-sm-9 col-md-9">
 
-<p>Use this area to provide additional information.</p>
+
+    <div class="row form-group">
+        <h3 class="col-md-10">Recent Requests</h3>
+        <!-- Single button -->
+        <div class="pull-right col-md-2 btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle pull-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Action <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu pull-right">
+                <li class="fast-menu"><a class="fast-menu" href="/Listing/ReIndex">Re-index listings</a></li>
+                <li class="fast-menu"><a class="fast-menu" href="/Listing">Find listing</a></li>
+                <li class="fast-menu"><a class="fast-menu" href="/Listing/RecentRequests">Recent Requests</a></li>
+                <li class="fast-menu"><a class="fast-menu" href="/Listing/RequestsByHour">Requests By Hour</a></li>
+                <li class="fast-menu"><a class="fast-menu" href="/Listing/RequestsByApplication">Requests By Application</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row form-group">
+        <form action="/Listing/RecentRequestFilter" class="row col-md-12 form-group" method="get">
+            <div class="row col-md-12">
+                <div class="col-md-6">
+                    <div class="row form-group">
+                        <div class="col-md-3"><label for="ListingId">Listing Id</label></div>
+                        <div class="col-md-7">
+                            <input class="form-control" data-val="true" data-val-number="The field Listing Id must be a number." id="ListingId" name="ListingId" type="text" value="">
+                            <span class="field-validation-valid" data-valmsg-for="ListingId" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-3"><label for="RequestStatus">Status</label></div>
+                        <div class="col-md-7">
+                            <select class="form-control" id="RequestStatus" name="RequestStatus">
+                                <option selected="selected" value="Default">Default</option>
+                                <option value="Failed">Failed</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Pending">Pending</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-3"><label for="Sorting">Sorting</label></div>
+                        <div class="col-md-7">
+                            <select class="form-control" id="Sorting" name="Sorting">
+                                <option selected="selected" value="Default">Default</option>
+                                <option value="Listing">Listing</option>
+                                <option value="Date">Date</option>
+                                <option value="Requestor">Requestor</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row form-group">
+                        <div class="col-md-3"><label for="Requestor">Requestor</label></div>
+                        <div class="col-md-9">
+                            <input class="form-control" id="Requestor" name="Requestor" type="text" value="">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-3"><label for="HourId">Hour</label></div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <select class="form-control" data-val="true" data-val-number="The field Hour must be a number." id="HourId" name="HourId">
+                                        <option value=""></option>
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                        <option>13</option>
+                                        <option>14</option>
+                                        <option>15</option>
+                                        <option>16</option>
+                                        <option>17</option>
+                                        <option>18</option>
+                                        <option>19</option>
+                                        <option>20</option>
+                                        <option>21</option>
+                                        <option>22</option>
+                                        <option>23</option>
+                                        <option>24</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col-md-3"><label for="Date">Date</label></div>
+                                        <div class="col-md-9">
+                                            <input class="form-control hasDatepicker" data-val="true" data-val-date="The field Date must be a date." id="Date" name="Date" type="text" value="">
+                                            <span class="field-validation-valid" data-valmsg-for="Date" data-valmsg-replace="true"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <button class="btn btn-primary">Filter</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Listing ID</th>
+                        <th>Operation</th>
+                        <th>Requested By</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>37485826</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:52:02 PM
+                            <br>
+                            Executed: 1/03/2016 1:52:02 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:52:03 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37391020</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:52:01 PM
+                            <br>
+                            Executed: 1/03/2016 1:52:01 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:52:01 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37491926</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:52:00 PM
+                            <br>
+                            Executed: 1/03/2016 1:52:00 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:52:00 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37470286</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:56 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:56 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:51:56 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37432478</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:54 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:54 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:51:54 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37498227</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:50 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:50 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:51:50 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37458200</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:47 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:47 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:51:47 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37441165</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:43 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:43 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:51:43 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37430035</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:42 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:43 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:51:43 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37481006</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:38 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:38 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:51:39 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37481005</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:38 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:38 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:51:40 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37431478</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:38 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:38 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:51:40 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37504412</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:38 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:38 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:51:39 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37475196</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:38 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:38 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:51:39 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37504411</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:38 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:38 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:51:39 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37428394</td>
+                        <td>delete</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:36 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:38 PM
+                            <br>
+                            Status: <span class="text-danger">Failed</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37429864</td>
+                        <td>delete</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:36 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:38 PM
+                            <br>
+                            Status: <span class="text-danger">Failed</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37473382</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:36 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:38 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:51:39 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37488550</td>
+                        <td>delete</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:37 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:38 PM
+                            <br>
+                            Status: <span class="text-danger">Failed</span>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>37504417</td>
+                        <td>insert</td>
+                        <td>CarsguideListingProcessor.IndexUpdateSearch</td>
+                        <td>
+                            Queued: 1/03/2016 1:51:36 PM
+                            <br>
+                            Executed: 1/03/2016 1:51:38 PM
+                            <br>
+                            Completed: <span class="text-success">1/03/2016 1:51:39 PM in 0 minute(s)</span>
+
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="text-center">
+                <ul class="pagination">
+                    <li class="active"><a href="javascript:void(0)">1</a></li>
+                    <li><a href="/Listing/RecentRequests?pg=2">2</a></li>
+                    <li><a href="/Listing/RecentRequests?pg=3">3</a></li>
+                    <li><a href="/Listing/RecentRequests?pg=4">4</a></li>
+                    <li><a href="/Listing/RecentRequests?pg=5">5</a></li>
+                    <li><a href="/Listing/RecentRequests?pg=6">6</a></li>
+                    <li><a href="/Listing/RecentRequests?pg=7">7</a></li>
+                    <li><a href="/Listing/RecentRequests?pg=8">8</a></li>
+                    <li><a href="/Listing/RecentRequests?pg=9">9</a></li>
+                    <li><a href="/Listing/RecentRequests?pg=10">10</a></li>
+                    <li><a href="/Listing/RecentRequests?pg=2">Next</a></li>
+                </ul>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+        $('#Date').datepicker({
+            dateFormat: "mm-dd-yy",
+            inline: false,
+            showOtherMonths: true,
+            dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+        });
+    });
+
+    </script>
+</div>
