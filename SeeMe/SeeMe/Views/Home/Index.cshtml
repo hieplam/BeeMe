@@ -32,7 +32,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         var imagesUrl;
-        var controllerUrl = 'http://localhost:5800/_api/homeapi/';
+        var controllerUrl = '/_api/homeapi/';
 
         $.get(controllerUrl, function (data) {
             imagesUrl = data;
@@ -41,7 +41,7 @@
                 var imagesHtml = '';
                 for (var i = 0; i < imagesUrl.length; i++) {
                     var fileName = imagesUrl[i];
-                    imagesHtml = imagesHtml.concat(generateImage(controllerUrl + fileName,''));
+                    imagesHtml = imagesHtml.concat(generateImage(controllerUrl + fileName,'/imagedetail'));
                 }
 
                 $('#image-wrapper').html(imagesHtml);
