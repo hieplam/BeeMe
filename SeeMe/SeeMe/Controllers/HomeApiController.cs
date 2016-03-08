@@ -17,7 +17,11 @@ namespace SeeMe.Controllers
         public IEnumerable<string> Get()
         {
             var sourcePath = HostingEnvironment.MapPath("~/sourcehinh");
-            
+            if (sourcePath == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+
             if (!Directory.Exists(sourcePath))
             {
                 Directory.CreateDirectory(sourcePath);

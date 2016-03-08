@@ -1,0 +1,13 @@
+﻿@model SeeMe.Models.Artist
+    
+@{
+    Layout = null;
+}
+
+<div class="avatar col-md-4">
+    <a href=""><img class="img-circle" src=@Model.AvatarUrl></a>
+</div>
+<div class="artist-name-and-title col-md-8">
+    <div class="name"><a href="">@Model.Name</a></div>
+    <div class="title">@Model.JobTitle</div>
+</div>
