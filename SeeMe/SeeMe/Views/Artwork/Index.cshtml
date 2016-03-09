@@ -1,4 +1,4 @@
-﻿@model SeeMe.Models.ImageDetailModel
+﻿@model SeeMe.Models.ArtworkModel
 
 @{
     ViewBag.Title = "Image Detail";
@@ -13,13 +13,13 @@
 <div class="row">
     <div class="col-lg-12" id="image-wrapper">
         <div class="col-lg-9 thumb form-group">
-            <a class="thumbnail" href="ImageDetail.html">
+            <a class="thumbnail" href="artwork">
                 <img class="img-responsive" id="testing" src=@Model.ImageUrl alt="">
-            </a>
+            </a>s
         </div>
         <div class="col-lg-3">
             <div class="row artist form-group">
-                @Html.Partial("_ArtistPartial",Model.Artist)
+                @Html.Partial("_ArtistPartial",Model.ArtistModel)
             </div>
             <div class="image-detail">
                 <div class="image-title">@Model.Title</div>

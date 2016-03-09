@@ -41,7 +41,7 @@
                 var imagesHtml = '';
                 for (var i = 0; i < imagesUrl.length; i++) {
                     var fileName = imagesUrl[i];
-                    imagesHtml = imagesHtml.concat(generateImage(controllerUrl + fileName,'/imagedetail'));
+                    imagesHtml = imagesHtml.concat(generateImage(controllerUrl + fileName,'/artwork'));
                 }
 
                 $('#image-wrapper').html(imagesHtml);

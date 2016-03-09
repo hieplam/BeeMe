@@ -3,15 +3,15 @@ using SeeMe.Models;
 
 namespace SeeMe.Controllers
 {
-    public class ImageDetailController : Controller
+    public class ArtworkController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
-            var model = new ImageDetailModel
+            var model = new ArtworkModel
             {
-                Artist = new Artist
+                ArtistModel = new ArtistModel
                 {
-                    JobTitle = "Senior 2D Concept Artist",
+                    JobTitle = "Senior 2D Concept ArtistModel",
                     AvatarUrl = "sourcehinh/ArtistAvatar/2.jpg",
                     Name = "Arctica Lam"
                 },
