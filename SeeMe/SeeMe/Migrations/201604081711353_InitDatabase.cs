@@ -22,11 +22,11 @@ namespace SeeMe.Migrations
                 "dbo.Artwork",
                 c => new
                     {
-                        Id = c.String(nullable: false, maxLength: 128),
+                        Id = c.Int(nullable: false, identity: true),
                         ArtistId = c.Int(nullable: false),
                         Title = c.String(nullable: false),
                         Description = c.String(),
-                        Url = c.String(nullable: false),
+                        ArtworkUrl = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Artist", t => t.ArtistId, cascadeDelete: true)

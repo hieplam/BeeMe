@@ -19,10 +19,6 @@ namespace SeeMe.Test
         [Test]
         public void ListWithNoElement_NoException()
         {
-            
-
-            
-
             Assert.DoesNotThrow(() => { });
 
         }

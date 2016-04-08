@@ -6,7 +6,7 @@ namespace SeeMe.DomainModels.Mapping
     {
         public ArtworkMapping()
         {
-            Property(x => x.Url).IsRequired();
+            Property(x => x.ArtworkUrl).IsRequired();
             Property(x => x.Title).IsRequired();
             HasRequired(x=>x.Artist).WithMany(x=>x.Artworks).HasForeignKey(x=>x.ArtistId).WillCascadeOnDelete();
         }

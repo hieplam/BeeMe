@@ -13,7 +13,7 @@ namespace SeeMe.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201603091556272_InitDatabase"; }
+            get { return "201604081711353_InitDatabase"; }
         }
         
         string IMigrationMetadata.Source
