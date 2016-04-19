@@ -1,11 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeeMe", "SeeMe\SeeMe.csproj", "{7030C3BC-D9E2-48FE-9D78-B50D4F658DEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeeMe.Test", "SeeMe.Test\SeeMe.Test.csproj", "{44143D00-264D-4E22-8C38-D0CC9ACCD295}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{F133DA23-D273-40F3-886A-6C3813BDDB55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeeMe.Ioc", "SeeMe.Ioc\SeeMe.Ioc.csproj", "{1F80AD74-2B14-4046-843F-17EB39E1BFE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeeMe.Services", "SeeMe.Services\SeeMe.Services.csproj", "{2EF7A5D2-3CEC-4C3C-9785-FE36543E3E55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeeMe.Repositories", "SeeMe.Repositories\SeeMe.Repositories.csproj", "{5FB8A455-D5D6-4ABE-B4F9-87DB20E5F503}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{EDDA4960-189C-44C8-87B2-1C001F07FC47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +31,26 @@ Global
 		{44143D00-264D-4E22-8C38-D0CC9ACCD295}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44143D00-264D-4E22-8C38-D0CC9ACCD295}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44143D00-264D-4E22-8C38-D0CC9ACCD295}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F80AD74-2B14-4046-843F-17EB39E1BFE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F80AD74-2B14-4046-843F-17EB39E1BFE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F80AD74-2B14-4046-843F-17EB39E1BFE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F80AD74-2B14-4046-843F-17EB39E1BFE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EF7A5D2-3CEC-4C3C-9785-FE36543E3E55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EF7A5D2-3CEC-4C3C-9785-FE36543E3E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EF7A5D2-3CEC-4C3C-9785-FE36543E3E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EF7A5D2-3CEC-4C3C-9785-FE36543E3E55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FB8A455-D5D6-4ABE-B4F9-87DB20E5F503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FB8A455-D5D6-4ABE-B4F9-87DB20E5F503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FB8A455-D5D6-4ABE-B4F9-87DB20E5F503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FB8A455-D5D6-4ABE-B4F9-87DB20E5F503}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{44143D00-264D-4E22-8C38-D0CC9ACCD295} = {EDDA4960-189C-44C8-87B2-1C001F07FC47}
+		{1F80AD74-2B14-4046-843F-17EB39E1BFE3} = {F133DA23-D273-40F3-886A-6C3813BDDB55}
+		{2EF7A5D2-3CEC-4C3C-9785-FE36543E3E55} = {F133DA23-D273-40F3-886A-6C3813BDDB55}
+		{5FB8A455-D5D6-4ABE-B4F9-87DB20E5F503} = {F133DA23-D273-40F3-886A-6C3813BDDB55}
 	EndGlobalSection
 EndGlobal

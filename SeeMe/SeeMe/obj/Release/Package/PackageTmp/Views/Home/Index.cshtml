@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+@*<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">{{ message }}</h1>
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col-lg-12 row form-group" id="image-wrapper">
+        
+    </div>
+</div>*@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">{{ message }}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12" id="image-wrapper">
+        <div class="col-md-4 col-sm-6 col-xs-12 thumb form-group">
+            <a class="thumbnail" href="">
+                <img class="img-responsive" id="testing" src="" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var imagesUrl;
+        var controllerUrl = '/_api/homeapi/';
+
+        $.get(controllerUrl, function (data) {
+            imagesUrl = data;
+        }).done(function () {
+            if (imagesUrl.length !== 0) {
+                var imagesHtml = '';
+                for (var i = 0; i < imagesUrl.length; i++) {
+                    var fileName = imagesUrl[i];
+                    imagesHtml = imagesHtml.concat(generateImage(controllerUrl + fileName,'/imagedetail'));
+                }
+
+                $('#image-wrapper').html(imagesHtml);
+            }
+        });
+    });
+
+    function generateImage(url, href) {
+        var imageStructure = '<div class="col-md-4 col-sm-6 col-xs-12 thumb form-group"><a class="thumbnail" href="{0}"><img class="img-responsive" id="testing" src="{1}" alt=""></a></div>';
+        return imageStructure.replace('{0}', href).replace('{1}', url);
+    };
+</script>

@@ -1,0 +1,5 @@
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\bin\Debug\SeeMe.Ioc.dll
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\bin\Debug\SeeMe.Ioc.pdb
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\obj\Debug\SeeMe.Ioc.csprojResolveAssemblyReference.cache
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\obj\Debug\SeeMe.Ioc.dll
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\obj\Debug\SeeMe.Ioc.pdb

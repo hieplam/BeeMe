@@ -1,0 +1,5 @@
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Services\bin\Debug\SeeMe.Services.dll
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Services\bin\Debug\SeeMe.Services.pdb
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Services\obj\Debug\SeeMe.Services.csprojResolveAssemblyReference.cache
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Services\obj\Debug\SeeMe.Services.dll
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Services\obj\Debug\SeeMe.Services.pdb
