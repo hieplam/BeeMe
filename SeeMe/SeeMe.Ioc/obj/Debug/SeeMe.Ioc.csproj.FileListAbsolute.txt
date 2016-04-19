@@ -3,3 +3,9 @@ D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\bin\Debug\SeeMe.Ioc.pdb
 D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\obj\Debug\SeeMe.Ioc.csprojResolveAssemblyReference.cache
 D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\obj\Debug\SeeMe.Ioc.dll
 D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\obj\Debug\SeeMe.Ioc.pdb
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\bin\Debug\Autofac.dll
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\bin\Debug\SeeMe.Repositories.dll
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\bin\Debug\EntityFramework.dll
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\bin\Debug\SeeMe.Repositories.pdb
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\bin\Debug\Autofac.xml
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\bin\Debug\EntityFramework.xml

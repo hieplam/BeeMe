@@ -6,14 +6,14 @@ namespace SeeMe.Repositories
 {
     public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        private DataContext _context;
-        public DataContext Context => _context;
+        private DbContext _context;
+        public DbContext Context => _context;
 
         private DbSet<TEntity> _dbSet;
         
         public DbSet<TEntity> DbSet => _dbSet;
 
-        protected BaseRepository(DataContext context)
+        protected BaseRepository(DbContext context)
         {
             _context = context;
             _dbSet = context.Set<TEntity>();

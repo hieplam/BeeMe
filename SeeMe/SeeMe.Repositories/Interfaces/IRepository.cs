@@ -7,7 +7,7 @@ namespace SeeMe.Repositories.Interfaces
     public interface IRepository<TEntity> where TEntity : class
     {
         #region Wrap nhiu qua hong tot ^^
-        DataContext Context { get; }
+        DbContext Context { get; }
         DbSet<TEntity> DbSet { get; }
         #endregion
 
