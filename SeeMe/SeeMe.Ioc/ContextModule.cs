@@ -1,5 +1,4 @@
-﻿using System.Data.Entity;
-using Autofac;
+﻿using Autofac;
 using SeeMe.Repositories;
 
 namespace SeeMe.Ioc

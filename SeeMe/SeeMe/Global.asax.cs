@@ -1,15 +1,11 @@
-﻿using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Web;
+﻿using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Autofac;
 using SeeMe.Ioc;
-using SeeMe.Repositories.DomainModels;
-using SeeMe.Repositories.Interfaces;
+using SeeMe.Services.Interfaces;
 
 namespace SeeMe
 {
@@ -28,15 +24,13 @@ namespace SeeMe
         private void RegisterAutoFac()
         {
             var builder = new ContainerBuilder();
-            var assembly = typeof (RepositoryModule).Assembly;
+            var repositoryAssembly = typeof (RepositoryModule).Assembly;
+            var serviceAssembly = typeof (ServiceModule).Assembly;
 
-            builder.RegisterAssemblyModules(assembly);
+            builder.RegisterAssemblyModules(repositoryAssembly);
+            builder.RegisterAssemblyModules(serviceAssembly);
 
-            var container = builder.Build();
-            using (var scope = container.BeginLifetimeScope())
-            {
-                var service = scope.Resolve<IRepository<Artist>>();
-            }
+            builder.Build();
         }
     }
 }

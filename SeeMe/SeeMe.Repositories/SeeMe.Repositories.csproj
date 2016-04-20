@@ -49,11 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtistRepository.cs" />
+    <Compile Include="ArtworkRepository.cs" />
     <Compile Include="BaseRepository.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="DomainModels\Artist.cs" />
     <Compile Include="DomainModels\Artwork.cs" />
     <Compile Include="DomainModels\Mapping\ArtworkMapping.cs" />
+    <Compile Include="Interfaces\IArtistRepository.cs" />
+    <Compile Include="Interfaces\IArtworkRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Migrations\201604181635572_InitDb.cs" />
     <Compile Include="Migrations\201604181635572_InitDb.Designer.cs">

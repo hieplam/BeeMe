@@ -7,11 +7,12 @@ namespace SeeMe.Repositories
     public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         private DbContext _context;
-        public DbContext Context => _context;
-
         private DbSet<TEntity> _dbSet;
-        
+
+        #region Wrap nhiu qua hong tot ^^
+        public DbContext Context => _context;
         public DbSet<TEntity> DbSet => _dbSet;
+        #endregion
 
         public BaseRepository(DataContext context)
         {
