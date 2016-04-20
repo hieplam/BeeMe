@@ -9,3 +9,4 @@ D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Repositories\obj\Debug\SeeMe.Repositories.
 D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Repositories\obj\Debug\SeeMe.Repositories.pdb
 D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Repositories\obj\Debug\SeeMe.Repositories.Migrations.InitDb.resources
 D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Repositories\obj\Debug\SeeMe.Repositories.csproj.GenerateResource.Cache
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Repositories\obj\Debug\SeeMe.Repositories.csprojResolveAssemblyReference.cache
