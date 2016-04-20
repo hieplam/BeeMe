@@ -9,3 +9,6 @@ D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\bin\Debug\EntityFramework.dll
 D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\bin\Debug\SeeMe.Repositories.pdb
 D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\bin\Debug\Autofac.xml
 D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\bin\Debug\EntityFramework.xml
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\bin\Debug\SeeMe.Ioc.dll.config
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\bin\Debug\EntityFramework.SqlServer.dll
+D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Ioc\bin\Debug\EntityFramework.SqlServer.xml

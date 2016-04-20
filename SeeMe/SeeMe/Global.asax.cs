@@ -1,8 +1,13 @@
-﻿using System.Web;
+﻿using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Autofac;
+using SeeMe.Ioc;
 
 namespace SeeMe
 {
@@ -15,6 +20,15 @@ namespace SeeMe
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            RegisterAutoFac();
+        }
+
+        private void RegisterAutoFac()
+        {
+            var builder = new ContainerBuilder();
+            var assembly = typeof (RepositoryModule).Assembly;
+
+            builder.RegisterAssemblyModules(assembly);
         }
     }
 }
