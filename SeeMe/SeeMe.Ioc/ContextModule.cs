@@ -8,7 +8,7 @@ namespace SeeMe.Ioc
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<DataContext>().As<DbContext>();
+            builder.RegisterType<DataContext>().As<DataContext>();
         }
     }
 }

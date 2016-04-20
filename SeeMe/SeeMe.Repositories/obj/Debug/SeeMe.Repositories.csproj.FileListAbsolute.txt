@@ -1,4 +1,3 @@
-D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Repositories\obj\Debug\SeeMe.Repositories.csprojResolveAssemblyReference.cache
 D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Repositories\bin\Debug\SeeMe.Repositories.dll.config
 D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Repositories\bin\Debug\SeeMe.Repositories.dll
 D:\GitHubRepository\BeeMe\SeeMe\SeeMe.Repositories\bin\Debug\SeeMe.Repositories.pdb

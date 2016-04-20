@@ -249,6 +249,14 @@
       <Project>{1f80ad74-2b14-4046-843f-17eb39e1bfe3}</Project>
       <Name>SeeMe.Ioc</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SeeMe.Repositories\SeeMe.Repositories.csproj">
+      <Project>{5fb8a455-d5d6-4abe-b4f9-87db20e5f503}</Project>
+      <Name>SeeMe.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeeMe.Services\SeeMe.Services.csproj">
+      <Project>{2ef7a5d2-3cec-4c3c-9785-fe36543e3e55}</Project>
+      <Name>SeeMe.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

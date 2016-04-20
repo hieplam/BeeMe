@@ -13,7 +13,7 @@ namespace SeeMe.Repositories
         
         public DbSet<TEntity> DbSet => _dbSet;
 
-        protected BaseRepository(DbContext context)
+        public BaseRepository(DataContext context)
         {
             _context = context;
             _dbSet = context.Set<TEntity>();

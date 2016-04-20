@@ -8,6 +8,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using Autofac;
 using SeeMe.Ioc;
+using SeeMe.Repositories.DomainModels;
+using SeeMe.Repositories.Interfaces;
 
 namespace SeeMe
 {
@@ -29,6 +31,12 @@ namespace SeeMe
             var assembly = typeof (RepositoryModule).Assembly;
 
             builder.RegisterAssemblyModules(assembly);
+
+            var container = builder.Build();
+            using (var scope = container.BeginLifetimeScope())
+            {
+                var service = scope.Resolve<IRepository<Artist>>();
+            }
         }
     }
 }
