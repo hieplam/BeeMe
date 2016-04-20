@@ -8,12 +8,22 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web.Hosting;
 using System.Web.Http;
+using SeeMe.Services.Interfaces;
 using SeeMe.Utilitiis;
 
 namespace SeeMe.Controllers
 {
     public class HomeApiController : ApiController
     {
+        private IArtworkService _artworkService;
+        private IArtistService _artistService;
+
+        public HomeApiController(IArtworkService artworkService, IArtistService artistService)
+        {
+            _artworkService = artworkService;
+            _artistService = artistService;
+        }
+
         public IEnumerable<string> Get()
         {
             var sourcePath = HostingEnvironment.MapPath("~/sourcehinh");

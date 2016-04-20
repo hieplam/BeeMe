@@ -46,7 +46,12 @@
     <Compile Include="Interfaces\IArtworkService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SeeMe.Repositories\SeeMe.Repositories.csproj">
+      <Project>{5fb8a455-d5d6-4abe-b4f9-87db20e5f503}</Project>
+      <Name>SeeMe.Repositories</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

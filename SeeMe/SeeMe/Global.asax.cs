@@ -5,7 +5,6 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using Autofac;
 using SeeMe.Ioc;
-using SeeMe.Services.Interfaces;
 
 namespace SeeMe
 {
