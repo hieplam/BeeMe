@@ -48,6 +48,10 @@
       <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=3.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -142,6 +146,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BeeGramController.cs" />
     <Compile Include="Controllers\HomeApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ArtworkController.cs" />
@@ -155,10 +160,20 @@
     <Compile Include="Utilitiis\CustomExpressionConstraint.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cssgram.min.css" />
     <Content Include="Content\custom.css" />
     <Content Include="Content\flat-ui.css" />
+    <Content Include="Content\fonts\glyphicons\flat-ui-icons-regular.svg" />
+    <Content Include="Content\fonts\lato\lato-black.svg" />
+    <Content Include="Content\fonts\lato\lato-bold.svg" />
+    <Content Include="Content\fonts\lato\lato-bolditalic.svg" />
+    <Content Include="Content\fonts\lato\lato-italic.svg" />
+    <Content Include="Content\fonts\lato\lato-light.svg" />
+    <Content Include="Content\fonts\lato\lato-regular.svg" />
     <Content Include="Content\Images\text.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\flat-ui-icons-regular.svg" />
@@ -171,6 +186,32 @@
     <Content Include="fonts\flat-ui-icons-regular.eot" />
     <Content Include="fonts\flat-ui-icons-regular.ttf" />
     <Content Include="fonts\flat-ui-icons-regular.woff" />
+    <Content Include="Content\fonts\glyphicons\flat-ui-icons-regular.eot" />
+    <Content Include="Content\fonts\glyphicons\flat-ui-icons-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons\flat-ui-icons-regular.woff" />
+    <Content Include="Content\fonts\glyphicons\selection.json" />
+    <Content Include="Content\fonts\lato\lato-black.eot" />
+    <Content Include="Content\fonts\lato\lato-black.ttf" />
+    <Content Include="Content\fonts\lato\lato-black.woff" />
+    <Content Include="Content\fonts\lato\lato-bold.eot" />
+    <Content Include="Content\fonts\lato\lato-bold.ttf" />
+    <Content Include="Content\fonts\lato\lato-bold.woff" />
+    <Content Include="Content\fonts\lato\lato-bolditalic.eot" />
+    <Content Include="Content\fonts\lato\lato-bolditalic.ttf" />
+    <Content Include="Content\fonts\lato\lato-bolditalic.woff" />
+    <Content Include="Content\fonts\lato\lato-italic.eot" />
+    <Content Include="Content\fonts\lato\lato-italic.ttf" />
+    <Content Include="Content\fonts\lato\lato-italic.woff" />
+    <Content Include="Content\fonts\lato\lato-light.eot" />
+    <Content Include="Content\fonts\lato\lato-light.ttf" />
+    <Content Include="Content\fonts\lato\lato-light.woff" />
+    <Content Include="Content\fonts\lato\lato-regular.eot" />
+    <Content Include="Content\fonts\lato\lato-regular.ttf" />
+    <Content Include="Content\fonts\lato\lato-regular.woff" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
     <None Include="Properties\PublishProfiles\ArcticaLam - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ArcticaLam - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -232,6 +273,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <None Include="Views\Artwork\Index.cshtml" />
     <Content Include="Views\Artwork\_ArtistPartial.cshtml" />
+    <None Include="Views\BeeGram\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -18,6 +18,7 @@ namespace SeeMe.Controllers
         private IArtworkService _artworkService;
         private IArtistService _artistService;
 
+        public HomeApiController() { }
         public HomeApiController(IArtworkService artworkService, IArtistService artistService)
         {
             _artworkService = artworkService;

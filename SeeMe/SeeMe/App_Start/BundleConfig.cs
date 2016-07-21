@@ -20,7 +20,8 @@ namespace SeeMe
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
                 "~/Content/custom.css",
-                "~/Content/flat-ui.css"));
+                "~/Content/flat-ui.css",
+                "~/Content/cssgram.min.css"));
         }
     }
 }
